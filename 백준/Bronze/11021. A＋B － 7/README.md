@@ -28,3 +28,33 @@
 
  <p>각 테스트 케이스마다 "Case #x: "를 출력한 다음, A+B를 출력한다. 테스트 케이스 번호는 1부터 시작한다.</p>
 
+ --------------------- -----------------------
+ ### 풀이 방법
+ - Scanner와 BufferedReader 두가지 방식으로 문제 해결
+ - Scanner방식 추가
+
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args){
+
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		int A,B=0;
+		int i=0;
+		int arr[] = new int[T];
+		
+		for(i=0; i<T; i++) {
+			A = sc.nextInt();
+			B = sc.nextInt();
+			arr[i] = A+B;
+		}
+		for(i=0; i<arr.length; i++) {
+		System.out.println("Case #"+(i+1)+": "+ arr[i]);
+		}
+		
+	}
+}
+   
+

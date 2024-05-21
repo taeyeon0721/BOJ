@@ -44,7 +44,7 @@
 <p>- JAVA에서는 Scanner와 System.out.println대신 BufferedReader와 BufferedWriter사용 가능</p>
 
 
-- 입력: BufferedReader.readLine()
+<p>- 입력: BufferedReader.readLine()</p>
  <p>-> 입력메서드 readLine();은 'String으로 리턴값이 고정'되어있기 때문에,</p>
  <p>다른 타입으로 입력받고자 한다면 '형변환' 필요!!</p>
 

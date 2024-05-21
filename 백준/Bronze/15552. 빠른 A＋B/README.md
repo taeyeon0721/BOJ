@@ -44,19 +44,19 @@
 <p>- JAVA에서는 Scanner와 System.out.println대신 BufferedReader와 BufferedWriter사용 가능</p>
 
 
-<code>- 입력: BufferedReader.readLine()</code>
+- 입력: BufferedReader.readLine()
  <p>-> 입력메서드 readLine();은 'String으로 리턴값이 고정'되어있기 때문에,</p>
  <p>다른 타입으로 입력받고자 한다면 '형변환' 필요!!</p>
 
-<code>- 출력: BufferedWriter</code>
+- 출력: BufferedWriter
   <p>-> 버퍼에 담아뒀다가 한번에 데이터 보냄</p>
   <p>-> bw.write(): 버퍼에 작성 / bw.flush(): 화면에 출력</p>
   <p>-> bw.write() + bw.flush() == System.out.println()</p>
   
-<code>- 공백 단위 데이터 분리: StringTokenizer</code>
+- 공백 단위 데이터 분리: StringTokenizer
   <p>ex) st = new StringTokenizer(br.readLine()," ");</p>
-<code>- 공백 단위 데이터 호출: nextToken()</code>
+- 공백 단위 데이터 호출: nextToken()
   <p>ex) st.nextToken();</p>
 
-<code>- 예외처리: throws IOException or try/catch</code>
+- 예외처리: throws IOException or try/catch
   <p>-> readLine()시마다 예외처리 반드시 필요</p> 

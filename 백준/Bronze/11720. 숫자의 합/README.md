@@ -34,6 +34,7 @@
 
 2. BufferedReader - split(), 배열 사용o
    - String 배열을 선언한 다음, split("")을 이용하여 배열 한 칸에 한글자씩 저장
+   - (입력하는 문자에 공백이 없다면 ex)54321, 각 숫자를 개별 문자열로 나누게 됨 
    - String 배열의 값을 int형으로 변환하여 누적합
   
 3. BufferedReader - getBytes() 사용, 배열 사용x

@@ -30,3 +30,49 @@
 
  <p>첫째 줄에 상수의 대답을 출력한다.</p>
 
+ ----------------- ---------------------
+ ### 풀이 방법 3가지
+ 1. StringBuilder - split 사용해서 배열에 넣는 방식
+  - 코드 참고
+    
+ 2. StringBuilder - StringTokenizer 사용해서 배열에 넣는 방식
+  
+  public class Main {
+
+	public static void main(String[] args) throws IOException {
+	
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine()," ");
+        //공백기준으로 바로 다음 문자 읽어들음
+		
+		int a = Integer.parseInt(new StringBuilder(st.nextToken()).reverse().toString());
+		int b = Integer.parseInt(new StringBuilder(st.nextToken()).reverse().toString());
+		System.out.println(a>b?a:b);
+
+	}
+}
+
+
+ 3. StringBuilder사용x - 정수 거꾸로 변환하는 식 사용
+    
+ public class Main {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int rev = 0;
+		int[] arr = new int[2];
+		
+		for(int i=0; i<2; i++) {
+			int a = sc.nextInt(); //734
+			while(a != 0) {
+				int num = a%10;
+				rev = rev * 10 + num;
+				a /= 10;
+			}
+			arr[i] = rev;
+			rev = 0;
+		}
+		System.out.println(Math.max(arr[0],arr[1]));
+	}
+}

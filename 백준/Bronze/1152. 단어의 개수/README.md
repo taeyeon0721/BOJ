@@ -44,3 +44,8 @@
   -> boolean hasMore Tokens(): 토큰이 남아있는지 알려줌
 
   -> String nextToken(): 다음 토큰을 반환
+
+
+- Split()과 비교 필요!!
+
+  -> split()은 StringTokenizer와 다르게 빈 값을 토큰으로 인식. 그래서 추가 처리가 필요함

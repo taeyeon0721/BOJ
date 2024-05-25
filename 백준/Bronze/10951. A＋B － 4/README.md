@@ -2,29 +2,57 @@
 
 [문제 링크](https://www.acmicpc.net/problem/10951) 
 
-### 성능 요약
+### 핵심 이론
+- EOF란?
+  
+   End of File의 약자로, 입력에서 더이상 읽을 수 있는 데이터가 없음을 나타내는 용어이다.<br>
+   읽을 수 있는 데이터가 없다는 뜻은 입력을 하지 않았다는 뜻과 같으므로 null을 의미한다.
 
-메모리: 14116 KB, 시간: 124 ms
+- 처리하는 방법?
+  
+   while(true)로 했을 때, 반복문은 계속해서 돌며 입력값을 요구하지만 값이 들어오지 않는다면 에러를 발생시킨다.<br>
+   그래서<br>
+   Scanner -> while(sc.hasNext()){} <br>
+   BufferedReader -> while((str=readLine())!=null) 을 사용해주면<br>
+   EOF일 경우 false반환, 값이 있는 경우엔 true 반환으로 잘 처리가 된다.
 
-### 분류
 
-구현, 사칙연산, 수학
+### 풀이 방법 3가지
+1. Scanner 사용
+   
+          	public static void main(String[] args) {
+          		
+          		Scanner sc = new Scanner(System.in);
+          		
+          		while(sc.hasNextInt()) {
+          			int A = sc.nextInt();
+          			int B = sc.nextInt();
+          			System.out.println(A+B);
+          		}
+          		sc.close();
+          	}
 
-### 제출 일자
+         -> 난 사실 이 코드가 가장 간단하고 편했다 ㅠㅠ
 
-2024년 5월 25일 11:59:10
+3. BufferedReader - StringBuilder - StringTokenizer 사용
 
-### 문제 설명
+       위 코드 참고
+   
+4. BufferedReader - StringBuilder - charAt 사용
+   BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-<p>두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.</p>
+       StringBuilder sb = new StringBuilder();
+     		String str;
+      
+     		while( (str=br.readLine()) != null ){
+     		    
+     			int a = str.charAt(0) - 48;
+     			int b = str.charAt(2) - 48;
+     			sb.append(a+b).append("\n");
+     		
+     		}
+     		System.out.print(sb);
 
-### 입력 
-
- <p>입력은 여러 개의 테스트 케이스로 이루어져 있다.</p>
-
-<p>각 테스트 케이스는 한 줄로 이루어져 있으며, 각 줄에 A와 B가 주어진다. (0 < A, B < 10)</p>
-
-### 출력 
-
- <p>각 테스트 케이스마다 A+B를 출력한다.</p>
+       -> charAt()dms 해당 문자의 아스키코드값을 반환하기 때문에 정수형태로 변환하기 위해서는
+          반드시 -48 또는 -'0'을 해주어야 한다.
 

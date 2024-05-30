@@ -11,14 +11,13 @@ public class Main {
 		int ex = sc.nextInt();
 		sc.close();
 		
-		if((m+ex)>=60) {
-			int A = h+(m+ex)/60;
-			int B = (m+ex)%60;
-			if(A>=24) A=A%24;
-			System.out.println(A+" "+B);
-		}else{
-			System.out.println(h+" "+(m+ex));
-		}
+		//다 분으로 만든 다음 시간으로 바꾸기
+		m = h*60 + m + ex;
+		
+		h = m/60;
+		m = m%60;
+		if(h>=24) h = h%24;
+		System.out.println(h+" "+m);
 	
 	}
 }

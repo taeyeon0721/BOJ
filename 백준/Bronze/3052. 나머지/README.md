@@ -11,9 +11,10 @@
 ### 다른 풀이 
 <code>2. HashSet 사용</code><br>
    -> 정의: 자바 Collection 중 Set 의 파생클래스<br>
-   -> 특징1: 중복되는 원소를 넣을 경우 하나만 저장. 즉, 중복원소를 허용x<br>
-   -> 특징2: HashSet 은 순서 개념이 없음. 따라서 Collections.sort() 메소드를 사용할 수 없음. 만약 정렬을 하고 싶다면 리스트로 변환 후 정렬해야함.<br>
-   -> 참고: https://st-lab.tistory.com/46<br>
+   -> ☆특징1: 중복되는 원소를 넣을 경우 하나만 저장. 즉, 중복원소를 허용x or 중복 자동 제거 <br>
+   -> ☆특징2: HashSet 은 순서 개념이 없음. 따라서 Collections.sort() 메소드를 사용할 수 없음. 만약 정렬을 하고 싶다면 리스트로 변환 후 정렬해야함.<br>
+   -> 참고 - Hashset에 대하여: https://velog.io/@acacia__u/hashSet<br>
+    &emsp;&emsp;&emsp; - HashSet을 이용한 풀이: https://st-lab.tistory.com/46<br>
 
          Scanner in = new Scanner(System.in);
       		HashSet<Integer> h = new HashSet<Integer>();

@@ -14,9 +14,9 @@ public class Main {
 		int B = Integer.parseInt(st.nextToken());
 		int C = Integer.parseInt(st.nextToken());
 		System.out.println((A+B)%C);
-		System.out.println((A%C+B%C)%C); //(A%C)+(B%C)%C 이건 왜 안되지,,
+		System.out.println(((A%C)+(B%C))%C); //(A%C)+(B%C)%C 이건 왜 안되지,,
 		System.out.println((A*B)%C);
-		System.out.println((A%C*B%C)%C); //(A%C)*(B%C)%C) 이건 왜 안되지,,
+		System.out.println(((A%C)*(B%C))%C); //(A%C)*(B%C)%C) 이건 왜 안되지,,
 		
 	}
 }

@@ -6,25 +6,50 @@
 
 메모리: 14392 KB, 시간: 108 ms
 
-### 분류
-
-구현, 문자열
-
 ### 제출 일자
 
 2024년 6월 4일 20:07:26
 
-### 문제 설명
+--------------------- --------------------------------
+### 풀이 과정
+- 생각보다 어려웠던 문제.. 아직 코드짜는데 많이 미숙하다고 느낌<br>
+  주석으로 풀이 복기하기
 
-<p>그룹 단어란 단어에 존재하는 모든 문자에 대해서, 각 문자가 연속해서 나타나는 경우만을 말한다. 예를 들면, ccazzzzbb는 c, a, z, b가 모두 연속해서 나타나고, kin도 k, i, n이 연속해서 나타나기 때문에 그룹 단어이지만, aabbbccb는 b가 떨어져서 나타나기 때문에 그룹 단어가 아니다.</p>
-
-<p>단어 N개를 입력으로 받아 그룹 단어의 개수를 출력하는 프로그램을 작성하시오.</p>
-
-### 입력 
-
- <p>첫째 줄에 단어의 개수 N이 들어온다. N은 100보다 작거나 같은 자연수이다. 둘째 줄부터 N개의 줄에 단어가 들어온다. 단어는 알파벳 소문자로만 되어있고 중복되지 않으며, 길이는 최대 100이다.</p>
-
-### 출력 
-
- <p>첫째 줄에 그룹 단어의 개수를 출력한다.</p>
-
+       public class Main {
+       
+        
+        public static void main(String[] args) throws IOException {
+       
+         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+         int N = Integer.parseInt(br.readLine());
+         int cnt=0;
+         
+         for(int i=0; i<N; i++) {
+          String word = br.readLine(); //단어 입력받기
+          if(isGroupWord(word)) {      //입력받은 단어가 그룹단어라면?
+           cnt++;                      //개수세기(입력값중에 몇개가 그룹단어인지)
+          }
+         }
+         System.out.println(cnt);
+        }
+        
+        public static boolean isGroupWord(String word) { //리턴타입이 boolean인 isGroupWord 메서드
+         boolean[] seen = new boolean[26]; //이미 나왔던 단어있지 체크하기 위해 알파벳 개수대로 배열생성
+         char prev ='\u0000';              //현재문자와 비교할 이전문자 -> char타입의 기본값이 널문자로 초기화
+         
+          for(int i=0; i<word.length(); i++) { 
+          char curr = word.charAt(i);  //입력받은 문자열의 문자열에서 문자 하나 가져옴
+           
+          if(prev != curr) { //현재 문자가 이전 문자와 다를때==연속된 문자가 아닐때
+           if(seen[curr - 'a']) {//이미 등장한적이 있다면 
+            return false; //그룹단어가 아니므로 false반환하고 메서드 종료
+           }
+           seen[curr - 'a'] = true;//현재 문자가 처음등장했으므로 배열에 true저장
+           prev = curr;		//이전문자를 현재문자로 업데이트 -> 다음 문자(word.charAt(i)을 비교하기 위해
+          }
+          }
+          
+         return true; //그룹단어가 아니라면 false를 반환하고 끝났겠지만
+                        그룹단어이기 때문에 루프를 다 돌고 true반환!
+        }
+       }

@@ -20,7 +20,8 @@
     (대략적으로 10^6이하의 값에 대해서는 float사용 가능.<br> 그 이상은 double: 더 정밀한 값)
     
 - 비슷한 다른 풀이
-	public class Main {
+  
+
 	    public static void main(String[] args) throws IOException {
 	
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -78,4 +79,4 @@
 		System.out.printf("%.6f", sumNumxScore/sumNum);
 		br.close();
 	    }
-	}
+  

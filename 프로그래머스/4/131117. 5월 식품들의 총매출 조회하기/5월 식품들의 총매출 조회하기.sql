@@ -1,4 +1,8 @@
--- 코드를 입력하세요
+-- 주의: "총매출" 구하시오
+-- P테이블의 PRICE는 상품의 가격이다.
+-- 총매출을 구하기 위해선 가격*주문량을 해줘야한다.★★
+-- 즉, 총매출 = P.PRICE * O.AMOUNT
+
 SELECT P.PRODUCT_ID, P.PRODUCT_NAME, SUM(P.PRICE*O.AMOUNT) AS TOTAL_SALES
     FROM FOOD_PRODUCT AS P INNER JOIN FOOD_ORDER AS O
     ON P.PRODUCT_ID = O.PRODUCT_ID
